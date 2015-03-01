@@ -11,27 +11,43 @@ public class SimpleStack {
 		top = -1;
 	}
 	
-	public void push() {
-		
+	public void push(long j) {
+		stackArray[++top] = j;
 	}
 	
-	public void peek() {
-		
+	public long peek() {
+		return stackArray[top];
 	}
 	
-	public void pop() {
-		
+	public long pop() {
+		return stackArray[top--];
 	}
 	
-	public void isEmpty() {
-		
+	public boolean isEmpty() {
+		return (top == -1);
 	}
 	
-	public void isFull() {
-		
+	public boolean isFull() {
+		return (top == maxSize-1);
 	}
+	
+	
 	
 	public static void main(String[] args) {
+		
+		SimpleStack theStack = new SimpleStack(10);
+		theStack.push(20);
+		theStack.push(30);
+		theStack.push(40);
+		
+		while (!theStack.isEmpty()) {
+			long value = theStack.pop();
+			System.out.print(value);
+			System.out.println(" ");
+		}
+		
+		System.out.println("");
+		
 		
 		
 
